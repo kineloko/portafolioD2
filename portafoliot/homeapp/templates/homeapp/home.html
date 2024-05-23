@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <div class="container text-center mt-5">
+        <div class="row align-items-center">
+            <div class="col-md-6 order-md-1">
+                <h1 style="font-size: 72px;">Bienvenidos al Folder </h1>
+                <h2 style="font-size: 32px;">Diego A. Villena</h2>
+                <h3 style="font-size: 24px;">Kinesiologo y Desarrollador Full Stack Python</h3>
+         
+            </div>
+            <div class="col-md-6 order-md-2">
+                <img src="{% static 'img/yo.jpeg' %}"  alt="Perfil" style="width:60%; border-radius:50%; box-shadow: 0px 0px 20px rgba(106, 21, 162, 0.5);">
+            </div>
+        </div>
+        <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=F2F70E&random=false&width=435&lines=KINESIOLOGO+DESARROLLADOR+FULL+STACK" alt="Typing SVG" /></a> 
+    </div>
+{% endblock %}

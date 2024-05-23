@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div style="display: flex; justify-content: center; height: 100vh;">
+    <div>
+      <div>
+        <h2>Crear/Editar Gasto</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="btn btn-outline-primary" type="submit">Guardar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block title %}Lista de blogs{% endblock %}
+
+{% block content %}
+    <div class="blogcontent">
+        <h2 class="text-center" style="font-size: 300%;">Lista de blogs</h2>
+        <div class="grid-container">
+            {% for blog in blogs %}
+                <div class="articulo">
+                    <h5 style="color: yellow; font-size: 200%;">{{ blog.title }}</h5>
+                    <p>{{ blog.content|slice:":100" }}</p>
+                    <a href="{% url 'blog_detail' blog.id %}" class="btn btn-outline-secondary" style="background-color: white; color: black;">Leer Completo</a>
+                    <p>Publicado el: {{ blog.date_posted }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block css %}
+    <style>
+        .blogcontent {
+            padding: 20px;
+            width: 90%;
+            margin: 20px auto;
+        }
+
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .articulo {
+            padding: 20px;
+            margin: 10px;
+            border-radius: 5px;
+            width: 300px; /* Ancho fijo para cada artículo */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .articulo h5 {
+            margin-top: 0;
+        }
+
+        .articulo p {
+            margin-bottom: 10px;
+        }
+
+        .articulo a {
+            display: block;
+            margin-top: 10px;
+        }
+    </style>
+{% endblock %}
